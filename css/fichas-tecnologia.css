@@ -1,0 +1,292 @@
+/**
+ * ===========================
+ * PORTAL DE TALENTOS - FICHAS TECNOLOGÍA
+ * ===========================
+ * Estilos para las fichas individuales de talento en tecnología
+ * Archivos: ficha-tecnologia-1.html, ficha-tecnologia-2.html, ficha-tecnologia-3.html
+ * Tema de color: Gradientes verde (#26a65b - #2ecc71)
+ */
+
+/* ===== RESET GLOBAL ===== */
+/* Elimina márgenes y padding por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY - ESTILOS GENERALES ===== */
+/* Define la apariencia base de las fichas de tecnología */
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #d4f1d4 0%, #a8e6a8 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== NAVBAR - BARRA DE NAVEGACIÓN TECNOLOGÍA ===== */
+/* Navbar con gradiente verde para fichas de tecnología */
+.navbar-tech {
+  background: linear-gradient(135deg, #26a65b 0%, #2ecc71 100%);
+  box-shadow: 0 4px 15px rgba(38, 166, 91, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Se mantiene encima de otros elementos */
+}
+
+/* Logo de la marca */
+.navbar-tech .navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: white !important;
+}
+
+/* Enlaces de navegación */
+.navbar-tech .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+/* Efecto hover en enlaces */
+.navbar-tech .nav-link:hover {
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* Botón del menú móvil */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ícono del menú móvil */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ===== HEADER - ENCABEZADO DE TALENTO ===== */
+/* Header con gradiente verde para fichas de tecnología */
+header {
+  background: linear-gradient(135deg, #26a65b 0%, #2ecc71 100%);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(38, 166, 91, 0.3);
+}
+
+/* Nombre del talento */
+header h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+/* Especialidad del talento */
+header p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 0.5rem;
+}
+
+/* ===== MAIN - CONTENEDOR PRINCIPAL ===== */
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+/* ===== TARJETA DE PERFIL ===== */
+/* Contenedor principal con grid para imagen e información */
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Contenedor de imagen */
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen del talento */
+.profile-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(38, 166, 91, 0.2);
+}
+
+/* Contenedor de información personal */
+.profile-info h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2rem;
+  color: #26a65b;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* Párrafos en la información */
+.profile-info p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+}
+
+/* ===== ITEMS DE INFORMACIÓN ===== */
+/* Cajas para detalles (edad, especialidad, etc) */
+.info-item {
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(38, 166, 91, 0.1) 0%,
+    rgba(46, 204, 113, 0.1) 100%
+  );
+  border-left: 4px solid #26a65b;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Texto en negrita para etiquetas */
+.info-item strong {
+  color: #26a65b;
+  font-weight: 700;
+}
+
+/* ===== SECTIONS - SECCIONES DE CONTENIDO ===== */
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== TÍTULOS DE SECCIONES (h3) ===== */
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.6rem;
+  color: #26a65b;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* ===== LISTAS DE LOGROS ===== */
+.achievements-list {
+  list-style: none;
+}
+
+/* Elementos de logros */
+.achievements-list li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: #3a4a5c;
+  margin-bottom: 0.75rem;
+}
+
+/* Estrella antes de cada logro */
+.achievements-list li:before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #26a65b;
+  font-size: 1.2rem;
+}
+
+/* ===== NAVEGACIÓN - BOTONES ===== */
+nav {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Botones de navegación */
+nav a {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #26a65b 0%, #2ecc71 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(38, 166, 91, 0.2);
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Efecto hover en botones */
+nav a:hover {
+  background: linear-gradient(135deg, #1e8449 0%, #26a65b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(38, 166, 91, 0.35);
+  color: white;
+}
+
+/* ===== FOOTER - PIE DE PÁGINA ===== */
+footer {
+  background: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Párrafo del footer */
+footer p {
+  color: #bdc3c7;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE - DISEÑO RESPONSIVE PARA MÓVILES ===== */
+@media (max-width: 768px) {
+  /* Título principal más pequeño */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /* Grid de una columna en móviles */
+  .profile-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Título de información más pequeño */
+  .profile-info h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Títulos de secciones más pequeños */
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Padding reducido */
+  section {
+    padding: 1.5rem;
+  }
+
+  /* Main con menos padding */
+  main {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,500 @@
+/**
+ * ==================================================
+ * PORTAL DE TALENTOS - MAIN CSS (index.html)
+ * ==================================================
+ * Archivo ordenado por secciones para ubicar estilos rapido.
+ *
+ * INDICE RAPIDO:
+ * 0) BASE GLOBAL (reset + body)
+ * 1) SECTION 1: NAVBAR
+ * 2) SECTION 2: CAROUSEL
+ * 3) SECTION 3: CONTENIDO PRINCIPAL
+ *    3.1) Secciones generales (section, h2, p)
+ *    3.2) Integrantes del equipo (team-grid, team-card)
+ *    3.3) Nuestros proyectos (project-cards-row, project-card)
+ *    3.4) Explorar categorias (#categorias nav)
+ * 4) SECTION 4: FOOTER
+ * 5) RESPONSIVE (mobile)
+ */
+
+/* ==================================================
+ * 0) BASE GLOBAL
+ * ================================================== */
+
+/* ===== RESET GLOBAL ===== */
+/* Elimina márgenes y padding por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY - ESTILOS GENERALES ===== */
+/* Define la apariencia base de toda la página */
+body {
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(102, 126, 234, 0.16), transparent 35%),
+    radial-gradient(circle at 88% 12%, rgba(118, 75, 162, 0.14), transparent 38%),
+    linear-gradient(135deg, #eef2f8 0%, #cfd8e8 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================================================
+ * 1) SECTION 1: NAVBAR
+ * ================================================== */
+
+/* ===== NAVBAR - BARRA DE NAVEGACION ===== */
+.navbar-custom {
+  background: linear-gradient(120deg, rgba(102, 126, 234, 0.96) 0%, rgba(118, 75, 162, 0.96) 100%);
+  box-shadow: 0 6px 20px rgba(74, 91, 180, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: saturate(140%) blur(6px);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Se mantiene encima de otros elementos */
+}
+
+/* Logo de la marca en el navbar */
+.navbar-custom .navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: white !important;
+}
+
+/* Enlaces de navegación */
+.navbar-custom .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+/* Efecto hover en enlaces */
+.navbar-custom .nav-link:hover {
+  color: white !important;
+  transform: translateY(-2px);
+  text-shadow: 0 4px 16px rgba(255, 255, 255, 0.35);
+}
+
+/* Indicador del enlace activo */
+.navbar-custom .nav-link.active {
+  color: white !important;
+  border-bottom: 3px solid white;
+  padding-bottom: 0.3rem;
+}
+
+/* Botón del menú para dispositivos móviles */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ícono del menú móvil (líneas horizontales) */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ==================================================
+ * 2) SECTION 2: CAROUSEL
+ * ================================================== */
+
+/* ===== CAROUSEL - CARRUSEL DE IMAGENES ===== */
+.carousel {
+  width: 100%;
+  margin: 0 0 2.25rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(24, 38, 70, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Imágenes del carousel */
+.carousel-inner img {
+  max-height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Controles del carousel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+/* Oculta el aro/puntitos inferiores del carrusel */
+#carouselExampleCaptions .carousel-indicators {
+  display: none;
+}
+
+/* Fondo difuminado para captions del carousel con texto negro */
+.carousel-caption-soft {
+  background: rgba(245, 248, 255, 0.76);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+.carousel-caption-soft h5,
+.carousel-caption-soft p {
+  color: #111 !important;
+  text-shadow: none;
+}
+
+/* ==================================================
+ * 3) SECTION 3: CONTENIDO PRINCIPAL
+ * ================================================== */
+
+/* ===== HEADER - ENCABEZADO PRINCIPAL ===== */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Título principal del header */
+header h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ===== MAIN - CONTENEDOR PRINCIPAL ===== */
+/* Centra y limita el ancho del contenido */
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+/* ----- 3.1) Secciones generales ----- */
+
+/* Bienvenido en ancho completo (full width) */
+#bienvenido {
+  background: #ffffff !important;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 2rem 0;
+  opacity: 1;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+#bienvenido:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+#bienvenido .bienvenido-grid {
+  width: min(1000px, 100%);
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#bienvenido .bienvenido-content p {
+  margin-bottom: 0;
+}
+
+#bienvenido .bienvenido-media img {
+  width: 100%;
+  height: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-top: 0;
+  box-shadow: 0 10px 24px rgba(45, 63, 110, 0.18);
+}
+
+/* ===== SECTIONS - SECCIONES DE CONTENIDO ===== */
+section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 28px rgba(24, 38, 70, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-margin-top: 80px; /* Espacio al hacer scroll suave */
+}
+
+/* Efecto hover en secciones */
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 34px rgba(24, 38, 70, 0.16);
+}
+
+/* ===== TÍTULOS DE SECCIONES (h2) ===== */
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.8rem;
+  color: #4f67d5;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* ===== PÁRRAFOS ===== */
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+/* ===== LISTAS DE EQUIPO ===== */
+section ul {
+  list-style: none;
+}
+
+/* Elementos de lista con formato personalizado */
+section li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: #3a4a5c;
+}
+
+/* Ícono decorativo antes de cada elemento de lista */
+section li:before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+/* ----- 3.2) Integrantes del equipo ----- */
+
+/* ===== GRID DE TARJETAS DE EQUIPO ===== */
+/* Sistema de grid responsivo para mostrar tarjetas de equipo */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* ===== TARJETAS DE EQUIPO ===== */
+.team-card {
+  background: linear-gradient(135deg, #5f78e8 0%, #6b84f0 52%, #7b61be 100%);
+  border-radius: 14px;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 24px rgba(83, 96, 187, 0.28);
+  border: none;
+}
+
+.team-card:nth-child(2n) {
+  background: linear-gradient(135deg, #5a87e8 0%, #4f9ed9 50%, #5b89cf 100%);
+}
+
+.team-card:nth-child(3n) {
+  background: linear-gradient(135deg, #6a73df 0%, #7966cc 50%, #865bb3 100%);
+}
+
+/* Elevación en hover */
+.team-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 36px rgba(83, 96, 187, 0.36);
+}
+
+/* Nombre del integrante del equipo */
+.team-card h5 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Descripción del rol */
+.team-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ===== IMÁGENES EN SECCIONES ===== */
+section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: block;
+}
+
+/* ----- 3.3) Nuestros proyectos ----- */
+
+/* ===== PROYECTOS - CARDS HORIZONTALES ===== */
+#proyecto {
+  background: #ffffff !important;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 2rem 0;
+  opacity: 1;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+#proyecto:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+#proyecto h2,
+#proyecto .project-cards-row {
+  width: min(1000px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.project-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  width: 100%;
+  border: 1px solid rgba(107, 132, 240, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(45, 63, 110, 0.12);
+}
+
+.project-card .card-img-top {
+  height: 170px;
+  object-fit: cover;
+  width: calc(100% - 1rem);
+  margin: 0.5rem 0.5rem 0;
+  border-radius: 10px;
+}
+
+/* ----- 3.4) Explorar categorias ----- */
+
+/* ===== NAVEGACION - ENLACES A CATEGORIAS ===== */
+#categorias nav ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+/* Botones con enlace a categorías */
+#categorias nav a {
+  display: block;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #5f78e8 0%, #6f68cf 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(78, 97, 189, 0.25);
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+}
+
+/* Efecto hover en botones de navegación */
+#categorias nav a:hover {
+  background: linear-gradient(135deg, #6f68cf 0%, #5f78e8 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(78, 97, 189, 0.34);
+}
+
+/* ==================================================
+ * 4) SECTION 4: FOOTER
+ * ================================================== */
+
+/* ===== FOOTER - PIE DE PAGINA ===== */
+footer {
+  background: linear-gradient(120deg, #243447 0%, #2f4155 100%);
+  color: #ecf0f1;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Párrafo del footer */
+footer p {
+  color: #bdc3c7;
+  margin: 0;
+}
+
+/* ==================================================
+ * 5) RESPONSIVE (MOBILE)
+ * ================================================== */
+
+/* ===== RESPONSIVE - DISENO RESPONSIVE PARA MOVILES ===== */
+/* Ajustes de tamaños para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Título principal más pequeño */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /* Padding reducido en secciones */
+  section {
+    padding: 1.5rem;
+  }
+
+  /* Títulos de secciones más pequeños */
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Main con menos padding */
+  main {
+    padding: 1rem;
+  }
+
+  /* Carousel más compacto */
+  .carousel-inner img {
+    max-height: 300px;
+  }
+
+  /* Cards de proyectos se apilan en móvil */
+  .project-cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Bienvenido pasa a una columna en móvil */
+  #bienvenido .bienvenido-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #bienvenido .bienvenido-media img {
+    max-height: 220px;
+  }
+}

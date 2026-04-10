@@ -1,0 +1,247 @@
+/**
+ * ===========================
+ * PORTAL DE TALENTOS - CATEGORÍA MÚSICA
+ * ===========================
+ * Estilos para la página musica.html
+ * Tema de color: Gradientes rojo/naranja (#ff6b6b - #ff8787)
+ * Incluye navbar, header, secciones de contenido y footer
+ */
+
+/* ===== RESET GLOBAL ===== */
+/* Elimina márgenes y padding por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY - ESTILOS GENERALES ===== */
+/* Define la apariencia base de la página de música */
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== NAVBAR - BARRA DE NAVEGACIÓN MÚSICA ===== */
+/* Navbar con gradiente rojo/naranja para la categoría de música */
+.navbar-musica {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 999; /* Se mantiene encima de otros elementos */
+}
+
+/* Logo de la marca en el navbar */
+.navbar-musica .navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: white !important;
+}
+
+/* Enlaces de navegación */
+.navbar-musica .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+/* Efecto hover en enlaces */
+.navbar-musica .nav-link:hover {
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* Botón del menú para dispositivos móviles */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ícono del menú móvil (líneas horizontales) */
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ===== HEADER - ENCABEZADO PRINCIPAL ===== */
+/* Header con gradiente rojo/naranja para mantener coherencia visual */
+header {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Título principal del header */
+header h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ===== MAIN - CONTENEDOR PRINCIPAL ===== */
+/* Centra y limita el ancho del contenido */
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+/* ===== SECTIONS - SECCIONES DE CONTENIDO ===== */
+section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en secciones */
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== TÍTULOS DE SECCIONES (h2) ===== */
+/* Usa el color rojo de la categoría música */
+h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.8rem;
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* ===== PÁRRAFOS ===== */
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+/* ===== LISTAS DE CONTENIDO ===== */
+section ul {
+  list-style: none;
+}
+
+/* Elementos de lista con formato personalizado */
+section li {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.1) 0%,
+    rgba(255, 135, 135, 0.1) 100%
+  );
+  border-left: 4px solid #ff6b6b;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover en elementos de lista */
+section li:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.15) 0%,
+    rgba(255, 135, 135, 0.15) 100%
+  );
+  transform: translateX(4px);
+}
+
+/* ===== ENLACES EN SECCIONES ===== */
+section a {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover en enlaces */
+section a:hover {
+  color: #ff5252;
+  text-decoration: underline;
+}
+
+/* ===== NAVEGACIÓN - BOTONES A DETALLE ===== */
+nav {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Botones de navegación a fichas de talentos */
+nav a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+/* Efecto hover en botones */
+nav a:hover {
+  background: linear-gradient(135deg, #ff5252 0%, #ff6b6b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.35);
+  color: white;
+}
+
+/* ===== FOOTER - PIE DE PÁGINA ===== */
+footer {
+  background: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Párrafo del footer */
+footer p {
+  color: #bdc3c7;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE - DISEÑO RESPONSIVE PARA MÓVILES ===== */
+/* Ajustes de tamaños para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Título principal más pequeño */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /* Padding reducido en secciones */
+  section {
+    padding: 1.5rem;
+  }
+
+  /* Títulos de secciones más pequeños */
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Main con menos padding */
+  main {
+    padding: 1rem;
+  }
+
+  /* Elementos de lista más compactos */
+  section li {
+    padding: 0.75rem;
+  }
+}
