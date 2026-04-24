@@ -1,0 +1,45 @@
+/* Estilos específicos para index.html */
+
+
+/* Mejora visual para los cards de categorías (Música y Tecnología) */
+#categorias .card {
+	border: none;
+	border-radius: 1.5rem;
+	box-shadow: 0 6px 32px 0 rgba(80, 112, 255, 0.10), 0 1.5px 6px 0 rgba(80, 112, 255, 0.08);
+	transition: transform 0.18s, box-shadow 0.18s;
+	margin-bottom: 2rem;
+	background: linear-gradient(135deg, #f8faff 60%, #e3e8ff 100%);
+}
+
+#categorias .card:hover {
+	transform: translateY(-6px) scale(1.03);
+	box-shadow: 0 12px 36px 0 rgba(80, 112, 255, 0.18), 0 3px 12px 0 rgba(80, 112, 255, 0.12);
+}
+
+#categorias .card-title {
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: #4f5bd5;
+	margin-bottom: 0.5rem;
+}
+
+#categorias .card-text {
+	color: #444;
+	font-size: 1.08rem;
+	margin-bottom: 1.2rem;
+}
+
+#categorias .btn-primary {
+	background: linear-gradient(90deg, #4f5bd5 60%, #6a82fb 100%);
+	border: none;
+	border-radius: 2rem;
+	font-weight: 600;
+	font-size: 1.08rem;
+	padding: 0.6rem 2.2rem;
+	box-shadow: 0 2px 8px rgba(80, 112, 255, 0.10);
+	transition: background 0.18s, box-shadow 0.18s;
+}
+#categorias .btn-primary:hover {
+	background: linear-gradient(90deg, #6a82fb 60%, #4f5bd5 100%);
+	box-shadow: 0 4px 16px rgba(80, 112, 255, 0.16);
+}
