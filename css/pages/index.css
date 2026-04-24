@@ -1,5 +1,31 @@
 /* Estilos específicos para index.html */
 
+#main-header {
+	background: transparent;
+	padding: 0;
+	box-shadow: none;
+}
+
+body {
+	padding-top: 120px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #000;
+}
+
+.navbar-light {
+	box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+}
+
+.navbar-light .navbar-toggler {
+	border-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-light .navbar-toggler-icon {
+	background-image: var(--bs-navbar-toggler-icon-bg);
+}
+
 
 /* Mejora visual para los cards de categorías (Música y Tecnología) */
 #categorias .card {
