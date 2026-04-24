@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --contacto-bg-1: #f4f8ff;
+  --contacto-bg-2: #d7e5ff;
+  --contacto-brand-a: #155eef;
+  --contacto-brand-b: #0f3d99;
+  --contacto-text: #1f2a44;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  color: var(--contacto-text);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(21, 94, 239, 0.18), transparent 35%),
+    radial-gradient(circle at 90% 5%, rgba(15, 61, 153, 0.14), transparent 30%),
+    linear-gradient(135deg, var(--contacto-bg-1), var(--contacto-bg-2));
+}
+
+.navbar-contacto {
+  background: linear-gradient(110deg, var(--contacto-brand-a), var(--contacto-brand-b));
+  box-shadow: 0 8px 20px rgba(11, 46, 121, 0.28);
+}
+
+.navbar-contacto .navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar-contacto .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.navbar-contacto .nav-link.active,
+.navbar-contacto .nav-link:hover {
+  color: #fff;
+}
+
+.hero-contacto {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(10, 30, 66, 0.12);
+}
+
+.hero-contacto h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+footer {
+  color: #334155;
+}
+
+@media (max-width: 768px) {
+  .hero-contacto {
+    padding: 1rem;
+  }
+}

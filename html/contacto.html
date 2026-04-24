@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Portal de Talentos</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/contacto.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-contacto">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">🎓 Portal Talentos</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#categorias"
+                >Explorar Categorías</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#bienvenido">Bienvenido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#equipo">Integrantes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html#proyecto"
+                >Nuestros Proyectos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="contacto.html"
+                >Contacto</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-4 py-md-5">
+      <header class="hero-contacto mb-4">
+        <h1>Contáctanos</h1>
+      </header>
+
+      <section class="card shadow-sm border-0 mb-4">
+        <div class="card-body p-4">
+          <h2 class="h4 mb-3">Formulario de contacto</h2>
+
+          <form
+            id="contactForm"
+            action="https://formsubmit.co/info@felipepinuer.com"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_subject"
+              id="hiddenSubject"
+              value="Nuevo mensaje desde Portal Talentos"
+            />
+            <input type="hidden" name="_cc" id="ccEmail" value="" />
+            <input type="hidden" name="_next" id="nextUrl" value="" />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Gracias por tu mensaje. El equipo de Portal Talentos lo revisara pronto."
+            />
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="ejemplo@correo.com"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="+54 11 1234 5678"
+                  required
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label for="rol" class="form-label">Tipo de usuario</label>
+                <select class="form-select" id="rol" name="rol" required>
+                  <option value="" selected disabled>
+                    Selecciona una opción
+                  </option>
+                  <option value="Estudiante">Estudiante</option>
+                  <option value="Docente">Docente</option>
+                  <option value="Familiar">Familiar</option>
+                  <option value="Visitante">Visitante</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label for="motivo" class="form-label"
+                  >Motivo del mensaje (10 opciones)</label
+                >
+                <select class="form-select" id="motivo" name="motivo" required>
+                  <option value="" selected disabled>
+                    Selecciona el motivo
+                  </option>
+                  <option value="1. Solicitud de información general">
+                    1. Solicitud de información general
+                  </option>
+                  <option value="2. Consulta sobre categoría Música">
+                    2. Consulta sobre categoría Música
+                  </option>
+                  <option value="3. Consulta sobre categoría Tecnología">
+                    3. Consulta sobre categoría Tecnología
+                  </option>
+                  <option value="4. Propuesta de proyecto estudiantil">
+                    4. Propuesta de proyecto estudiantil
+                  </option>
+                  <option value="5. Invitación a evento">
+                    5. Invitación a evento
+                  </option>
+                  <option value="6. Reporte de error en la web">
+                    6. Reporte de error en la web
+                  </option>
+                  <option value="7. Sugerencia de mejora">
+                    7. Sugerencia de mejora
+                  </option>
+                  <option value="8. Colaboración institucional">
+                    8. Colaboración institucional
+                  </option>
+                  <option value="9. Soporte técnico">9. Soporte técnico</option>
+                  <option value="10. Otro">10. Otro</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label for="asunto" class="form-label">Asunto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="asunto"
+                  name="asunto"
+                  required
+                />
+              </div>
+
+              <div class="col-12">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea
+                  class="form-control"
+                  id="mensaje"
+                  name="mensaje"
+                  rows="5"
+                  minlength="20"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="col-12 form-check mt-2 ms-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="aceptado"
+                  id="consentimiento"
+                  required
+                />
+                <label class="form-check-label" for="consentimiento">
+                  Acepto el tratamiento de datos para recibir respuesta.
+                </label>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-4 flex-wrap">
+              <button type="submit" class="btn btn-primary">
+                Enviar mensaje
+              </button>
+              <button type="reset" class="btn btn-outline-secondary">
+                Limpiar
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center py-4">
+      <p class="mb-0">
+        © 2026 Portal de Talentos Escolares • Página de contacto
+      </p>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="successModal"
+      tabindex="-1"
+      aria-labelledby="successModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="successModalLabel">Mensaje enviado</h5>
+          </div>
+          <div class="modal-body">
+            Tu mensaje fue enviado correctamente. La página se actualizará en 5
+            segundos.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/contacto.js"></script>
+  </body>
+</html>
