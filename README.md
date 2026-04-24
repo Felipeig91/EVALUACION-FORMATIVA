@@ -11,29 +11,32 @@ Desarrollar un sitio web básico utilizando **HTML5**, aplicando correctamente l
 ## 📑 Estructura del Proyecto
 
 ```
-PORTAL-TALENTOS/
+EVALUACION-FORMATIVA/
 │
-├── index.html                    # Página principal
-├── musica.html                   # Categoría: Música
-├── tecnologia.html               # Categoría: Tecnología
-│
-├── ficha-musica-1.html          # Sofia Rodríguez - Cantante de Ópera
-├── ficha-musica-2.html          # Diego Flores - Guitarrista
-├── ficha-musica-3.html          # Valentina Sánchez - Productora Musical
-│
-├── ficha-tecnologia-1.html      # Pablo García - Programador Python
-├── ficha-tecnologia-2.html      # Laura Mendez - Diseñadora Web
-├── ficha-tecnologia-3.html      # Andrés Castro - Especialista Ciberseguridad
-│
-├── css/                          # Estilos centralizados del sitio
-│   ├── main.css                  # Estilos de index.html
-│   ├── musica.css                # Estilos de musica.html
-│   ├── tecnologia.css            # Estilos de tecnologia.html
-│   ├── fichas-musica.css         # Estilos de fichas musicales
-│   └── fichas-tecnologia.css     # Estilos de fichas tecnológicas
-│
-├── img/                          # Carpeta de imágenes
-├── README.md                     # Este archivo
+├── index.html
+├── README.md
+├── css/
+│   ├── main.css
+│   ├── musica.css
+│   ├── tecnologia.css
+│   ├── fichas-musica.css
+│   ├── fichas-tecnologia.css
+│   ├── contacto.css
+│   └── pages/
+│       └── index.css
+├── html/
+│   ├── musica.html
+│   ├── tecnologia.html
+│   ├── contacto.html
+│   ├── ficha-musica-1.html
+│   ├── ficha-musica-2.html
+│   ├── ficha-musica-3.html
+│   ├── ficha-tecnologia-1.html
+│   ├── ficha-tecnologia-2.html
+│   └── ficha-tecnologia-3.html
+├── js/
+│   └── contacto.js
+└── img/
 ```
 
 ## 🌐 Páginas del Sitio
@@ -83,7 +86,9 @@ Cada estudiante talentoso tiene una ficha con:
 ✅ **Diseño moderno con Bootstrap 5** - Componentes responsivos y consistentes  
 ✅ **Navbar unificado en todas las páginas** - Menú común con accesos principales  
 ✅ **Scroll suave en inicio** - Navegación interna fluida por secciones  
-✅ **Carousel con imágenes aleatorias de talento** - Imágenes dinámicas al recargar  
+✅ **Página de contacto funcional** - Formulario de contacto con 10 opciones de motivo  
+✅ **Integración con FormSubmit** - Envío a correo admin y copia al usuario  
+✅ **Popup de confirmación post envío** - Mensaje modal y recarga automática de la página  
 ✅ **CSS ordenado por archivos** - Estilos separados en carpeta `css`  
 ✅ **Etiquetas aprendidas en clase**:
 
@@ -104,7 +109,7 @@ Cada estudiante talentoso tiene una ficha con:
 - **HTML5** - Estructura semántica y contenido del sitio
 - **CSS3** - Estilos visuales personalizados y organización por archivos
 - **Bootstrap 5** - Componentes responsivos como navbar y carousel
-- **JavaScript (Vanilla JS)** - Interacciones del sitio, incluyendo carga aleatoria de imágenes
+- **JavaScript (Vanilla JS)** - Validación del formulario, flujo de envío y popup de confirmación
 - **Visual Studio Code** - Entorno de desarrollo utilizado para edición del proyecto
 - **copilot** - Plugin Chat AI
 
@@ -172,14 +177,18 @@ Cada estudiante talentoso tiene una ficha con:
 - El carousel del inicio carga imágenes aleatorias relacionadas con talento
 - Se mantiene la estructura HTML correcta y semántica como base del proyecto
 
-## 🔄 Cambios Recientes (Abril 2026)
+## 🔄 Cambios Recientes (23 de abril de 2026)
 
-- Se creó la carpeta `css` y se movieron los estilos inline de todas las páginas.
-- Se agregaron archivos CSS separados por tipo de página para mantener orden.
-- Se unificó el navbar en todas las páginas del portal.
-- Se mejoró el `index.html` con un carousel de enfoque en talento.
-- Se implementó carga aleatoria de imágenes para el carousel.
-- Se mantuvieron y mejoraron comentarios de documentación en código.
+- Se creó la página `html/contacto.html` con diseño Bootstrap y formulario completo.
+- Se implementó integración con FormSubmit en el formulario de contacto.
+- Se agregó lógica en `js/contacto.js` para:
+  - Validación visual del formulario.
+  - Configuración de campos ocultos (`_cc`, `_subject`, `_next`).
+  - Mostrar popup de confirmación al volver del envío.
+  - Recargar la página 5 segundos después del envío exitoso.
+- Se creó `css/contacto.css` para estilos específicos de la página de contacto.
+- Se unificó el navbar del `index.html` en todas las páginas del proyecto.
+- Se corrigió y reconstruyó `index.html` tras conflictos de merge (marcadores `<<<<<<<`, `=======`, `>>>>>>>`).
 
 ## 🔍 Verificación de Calidad
 
@@ -223,7 +232,7 @@ Cada estudiante talentoso tiene una ficha con:
 
 - Añadir más categorías de talentos (deporte, artes, etc.)
 - Incluir estilos CSS para mejorar la presentación visual
-- Agregar formulario de contacto
+- Integrar backend propio para guardar mensajes en base de datos (opcional, reemplazo de FormSubmit)
 - Implementar galería de fotos
 - Crear página de categoría "Otros Talentos"
 
@@ -235,5 +244,5 @@ Cada estudiante talentoso tiene una ficha con:
 
 ---
 
-**Última actualización**: 9 de abril de 2026  
-**Versión**: 2.0
+**Última actualización**: 23 de abril de 2026  
+**Versión**: 2.1
