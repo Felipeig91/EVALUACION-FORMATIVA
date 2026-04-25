@@ -498,3 +498,35 @@ footer p {
     max-height: 220px;
   }
 }
+
+/* ==================================================
+ * BOTÓN VOLVER ARRIBA
+ * ================================================== */
+#btn-ir-arriba {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  z-index: 99;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+#btn-ir-arriba:hover {
+  background-color: #764ba2;
+  box-shadow: 0 6px 16px rgba(118, 75, 162, 0.5);
+  transform: translateY(-3px);
+}
+
+#btn-ir-arriba:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
