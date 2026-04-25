@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestros Proyectos - Portal de Talentos Escolares</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/proyectos.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom"
+    >
+      <div class="container-fluid px-4">
+        <a class="navbar-brand fw-bold" href="../index.html">
+          <i class="fas fa-rocket text-primary me-2"></i>TALENTOS
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./quienes-somos.html">Quienes somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./proyectos.html">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-outline-primary px-3"
+                href="./contacto.html"
+                >Contacto</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-proyectos">
+      <div class="hero-overlay">
+        <div class="container">
+          <div class="hero-content-proyectos">
+            <h1 class="hero-title-proyectos">Nuestros Proyectos</h1>
+            <p class="hero-subtitle-proyectos">
+              Explora los proyectos innovadores desarrollados por nuestros
+              estudiantes talentosos
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+      <!-- Filtros -->
+      <section class="filter-section py-5">
+        <div class="container">
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <button class="btn btn-filter active" data-filter="todos">
+              <i class="fas fa-th me-2"></i>Todos
+            </button>
+            <button class="btn btn-filter" data-filter="musica">
+              <i class="fas fa-music me-2"></i>Música
+            </button>
+            <button class="btn btn-filter" data-filter="tecnologia">
+              <i class="fas fa-code me-2"></i>Tecnología
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROYECTOS GRID -->
+      <section class="proyectos-section py-5">
+        <div class="container">
+          <div class="proyectos-grid">
+            <!-- Proyecto 1 - Música -->
+            <div class="proyecto-card" data-category="musica">
+              <div class="proyecto-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8KmZrwiiO6DeEZYNV88KwARLEyOForb1UUA&s"
+                  alt="Proyecto Garage Rock"
+                  class="img-fluid"
+                />
+                <div class="proyecto-overlay">
+                  <a href="ficha-musica-2.html" class="btn btn-light">
+                    <i class="fas fa-arrow-right me-2"></i>Ver Proyecto
+                  </a>
+                </div>
+                <div class="proyecto-category-badge">
+                  <i class="fas fa-music me-1"></i>Música
+                </div>
+              </div>
+              <div class="proyecto-body">
+                <h3 class="proyecto-title">Garage Rock</h3>
+                <p class="proyecto-description">
+                  Proyecto musical colaborativo que explora el rock en sus
+                  formas más creativas y expresivas.
+                </p>
+                <div class="proyecto-meta">
+                  <span class="meta-item">
+                    <i class="fas fa-user me-1"></i>Diego
+                  </span>
+                  <span class="meta-item">
+                    <i class="fas fa-calendar me-1"></i>2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 2 - Tecnología -->
+            <div class="proyecto-card" data-category="tecnologia">
+              <div class="proyecto-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdMl7FRCYTzjMkx1kMVUOX5hPA5NnPlRODhA&s"
+                  alt="Proyecto Hackathon"
+                  class="img-fluid"
+                />
+                <div class="proyecto-overlay">
+                  <a href="ficha-tecnologia-1.html" class="btn btn-light">
+                    <i class="fas fa-arrow-right me-2"></i>Ver Proyecto
+                  </a>
+                </div>
+                <div class="proyecto-category-badge">
+                  <i class="fas fa-code me-1"></i>Tecnología
+                </div>
+              </div>
+              <div class="proyecto-body">
+                <h3 class="proyecto-title">Hackathon 2026</h3>
+                <p class="proyecto-description">
+                  Competencia de innovación tecnológica donde los mejores
+                  talentos desarrollan soluciones disruptivas y creativas.
+                </p>
+                <div class="proyecto-meta">
+                  <span class="meta-item">
+                    <i class="fas fa-user me-1"></i>Pablo
+                  </span>
+                  <span class="meta-item">
+                    <i class="fas fa-calendar me-1"></i>2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 3 - Tecnología -->
+            <div class="proyecto-card" data-category="tecnologia">
+              <div class="proyecto-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXPf-O1sX13gRGXCMf95cCwEhsE4wln8DBEA&s"
+                  alt="Proyecto de Innovación"
+                  class="img-fluid"
+                />
+                <div class="proyecto-overlay">
+                  <a href="ficha-tecnologia-3.html" class="btn btn-light">
+                    <i class="fas fa-arrow-right me-2"></i>Ver Proyecto
+                  </a>
+                </div>
+                <div class="proyecto-category-badge">
+                  <i class="fas fa-code me-1"></i>Tecnología
+                </div>
+              </div>
+              <div class="proyecto-body">
+                <h3 class="proyecto-title">Proyecto de Innovación</h3>
+                <p class="proyecto-description">
+                  Iniciativa que busca transformar ideas en realidad a través de
+                  la colaboración, tecnología y el talento.
+                </p>
+                <div class="proyecto-meta">
+                  <span class="meta-item">
+                    <i class="fas fa-user me-1"></i>Andrés
+                  </span>
+                  <span class="meta-item">
+                    <i class="fas fa-calendar me-1"></i>2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 4 - Música -->
+            <div class="proyecto-card" data-category="musica">
+              <div class="proyecto-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLnKBhKJFR-yPhBb6tBxVvNe4rYhLt-r_cL7c&s"
+                  alt="Proyecto Concierto Sinfónico"
+                  class="img-fluid"
+                />
+                <div class="proyecto-overlay">
+                  <a href="ficha-musica-1.html" class="btn btn-light">
+                    <i class="fas fa-arrow-right me-2"></i>Ver Proyecto
+                  </a>
+                </div>
+                <div class="proyecto-category-badge">
+                  <i class="fas fa-music me-1"></i>Música
+                </div>
+              </div>
+              <div class="proyecto-body">
+                <h3 class="proyecto-title">Concierto Sinfónico</h3>
+                <p class="proyecto-description">
+                  Presentación de orquesta sinfónica con obras clásicas y
+                  contemporáneas dirigidas por expertos en música.
+                </p>
+                <div class="proyecto-meta">
+                  <span class="meta-item">
+                    <i class="fas fa-user me-1"></i>Sofia
+                  </span>
+                  <span class="meta-item">
+                    <i class="fas fa-calendar me-1"></i>2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 5 - Música -->
+            <div class="proyecto-card" data-category="musica">
+              <div class="proyecto-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZPv_PXlE8EYs9u6e1g3MH-gR-5t4JE9XtMQ&s"
+                  alt="Proyecto Producciones Musicales"
+                  class="img-fluid"
+                />
+                <div class="proyecto-overlay">
+                  <a href="ficha-musica-3.html" class="btn btn-light">
+                    <i class="fas fa-arrow-right me-2"></i>Ver Proyecto
+                  </a>
+                </div>
+                <div class="proyecto-category-badge">
+                  <i class="fas fa-music me-1"></i>Música
+                </div>
+              </div>
+              <div class="proyecto-body">
+                <h3 class="proyecto-title">Producciones Musicales</h3>
+                <p class="proyecto-description">
+                  Estudio de producción musical con grabación, mezcla y
+                  masterización de canciones originales.
+                </p>
+                <div class="proyecto-meta">
+                  <span class="meta-item">
+                    <i class="fas fa-user me-1"></i>Valentina
+                  </span>
+                  <span class="meta-item">
+                    <i class="fas fa-calendar me-1"></i>2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 6 - Tecnología -->
+            <div class="proyecto-card" data-category="tecnologia">
+              <div class="proyecto-image">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqVbK9Z3w7JLz7qVbK9Z3w7JLz7&s"
+                  alt="Proyecto Ciberseguridad"
+                  class="img-fluid"
+                />
+                <div class="proyecto-overlay">
+                  <a href="ficha-tecnologia-2.html" class="btn btn-light">
+                    <i class="fas fa-arrow-right me-2"></i>Ver Proyecto
+                  </a>
+                </div>
+                <div class="proyecto-category-badge">
+                  <i class="fas fa-code me-1"></i>Tecnología
+                </div>
+              </div>
+              <div class="proyecto-body">
+                <h3 class="proyecto-title">Seguridad Digital</h3>
+                <p class="proyecto-description">
+                  Proyecto de ciberseguridad enfocado en protección de datos y
+                  análisis de vulnerabilidades.
+                </p>
+                <div class="proyecto-meta">
+                  <span class="meta-item">
+                    <i class="fas fa-user me-1"></i>Laura
+                  </span>
+                  <span class="meta-item">
+                    <i class="fas fa-calendar me-1"></i>2026
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Estadísticas -->
+      <section class="stats-section py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">Logros de Nuestros Proyectos</h2>
+          <div class="row text-center">
+            <div class="col-md-3 mb-4">
+              <div class="stat-card">
+                <div class="stat-number">6+</div>
+                <div class="stat-label">Proyectos Activos</div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Estudiantes Involucrados</div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Horas de Trabajo</div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Dedicación</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="bg-dark text-white py-4">
+      <div class="container">
+        <p class="mb-0">
+          © 2026 Portal de Talentos Escolares. Desarrollado por estudiantes •
+          Celebramos el talento •
+          <a href="contacto.html" class="text-primary">Contacto</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/proyectos.js"></script>
+  </body>
+</html>
