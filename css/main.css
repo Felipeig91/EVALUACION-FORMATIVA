@@ -29,6 +29,11 @@
   box-sizing: border-box;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 /* ===== BODY - ESTILOS GENERALES ===== */
 /* Define la apariencia base de toda la página */
 body {
@@ -42,6 +47,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 /* ==================================================

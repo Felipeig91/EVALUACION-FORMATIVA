@@ -4,10 +4,7 @@
 	background: transparent;
 	padding: 0;
 	box-shadow: none;
-}
-
-body {
-	padding-top: 120px;
+	margin: 0;
 }
 
 .navbar-light .navbar-nav .nav-link {
