@@ -17,6 +17,12 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/main.css" />
     <!-- CSS externo -->
     <link rel="stylesheet" href="../css/tecnologia.css" />
   </head>
@@ -28,17 +34,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/load-navbar.js"></script>
 
-    <!-- HEADER -->
-    <header>
-      <h1>💻 Categoría: Tecnología</h1>
-    </header>
+    <!-- HERO SECTION -->
+    <section class="hero-tecnologia py-5">
+      <div class="container">
+        <h1 class="display-4 fw-bold mb-3">💻 Categoría: Tecnología</h1>
+        <p class="lead text-white-50">
+          Descubre a nuestros programadores, diseñadores e innovadores tech
+        </p>
+      </div>
+    </section>
 
-    <!-- MAIN -->
-    <main>
+    <!-- MAIN CONTENT -->
+    <main class="container py-5">
       <!-- Sección de descripción -->
-      <section>
-        <h2>Talentos Tecnológicos</h2>
-        <p>
+      <section class="mb-5">
+        <h2 class="h3 fw-bold mb-3">Talentos Tecnológicos</h2>
+        <p class="text-muted fs-5">
           Aquí encontrarás a los estudiantes con destacados talentos en el área
           de la tecnología. Nuestros especialistas incluyen programadores,
           diseñadores web, expertos en ciberseguridad y desarrolladores
@@ -47,31 +58,96 @@
       </section>
 
       <!-- Sección de lista de talentos -->
-      <section>
-        <h2>Estudiantes Destacados</h2>
-        <ul>
-          <li>
-            <a href="ficha-tecnologia-1.html"
-              >🔧 Pablo García - Programador Python</a
-            >
-          </li>
-          <li>
-            <a href="ficha-tecnologia-2.html"
-              >🎨 Laura Mendez - Diseñadora Web</a
-            >
-          </li>
-          <li>
-            <a href="ficha-tecnologia-3.html"
-              >🔒 Andrés Castro - Especialista Ciberseguridad</a
-            >
-          </li>
-        </ul>
+      <section class="mb-5">
+        <h2 class="h3 fw-bold mb-4">Estudiantes Destacados</h2>
+        <div class="row g-4">
+          <!-- Talento 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 talento-card">
+              <div class="talento-icon">
+                <i class="fas fa-python"></i>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">🔧 Pablo García</h5>
+                <p class="card-text text-muted mb-3">Programador Python</p>
+                <p class="small text-muted mb-3">
+                  Experto en Python, desarrollo backend y análisis de datos.
+                </p>
+                <a href="ficha-tecnologia-1.html" class="btn btn-sm btn-primary">
+                  Ver Perfil
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Talento 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 talento-card">
+              <div class="talento-icon">
+                <i class="fas fa-palette"></i>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">🎨 Laura Mendez</h5>
+                <p class="card-text text-muted mb-3">Diseñadora Web</p>
+                <p class="small text-muted mb-3">
+                  Especialista en UX/UI, diseño responsivo y frontend moderno.
+                </p>
+                <a href="ficha-tecnologia-2.html" class="btn btn-sm btn-primary">
+                  Ver Perfil
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Talento 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 talento-card">
+              <div class="talento-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title fw-bold">🔒 Andrés Castro</h5>
+                <p class="card-text text-muted mb-3">Especialista Ciberseguridad</p>
+                <p class="small text-muted mb-3">
+                  Experto en seguridad informática, redes y protección de datos.
+                </p>
+                <a href="ficha-tecnologia-3.html" class="btn btn-sm btn-primary">
+                  Ver Perfil
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de navegación -->
+      <section class="mt-5 pt-4 border-top">
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+          <a href="../index.html" class="btn btn-outline-secondary">
+            <i class="fas fa-arrow-left me-2"></i>Volver al Inicio
+          </a>
+          <a href="categorias.html" class="btn btn-outline-secondary">
+            <i class="fas fa-th me-2"></i>Ver todas las Categorías
+          </a>
+          <a href="contacto.html" class="btn btn-outline-primary">
+            <i class="fas fa-envelope me-2"></i>Contacto
+          </a>
+        </div>
       </section>
     </main>
 
-    <!-- NAVIGATION -->
-    <nav>
-      <a href="../index.html">← Volver al Inicio</a>
+    <!-- FOOTER CONTAINER - Se carga automáticamente -->
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- BOTÓN SCROLL TO TOP -->
+    <button id="scroll-to-top" title="Subir al inicio">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/scroll-to-top.js"></script>
+  </body>
+</html>
       |
       <a href="contacto.html">Ir a Contacto</a>
     </nav>

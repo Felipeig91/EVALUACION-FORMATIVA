@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categorías - Portal de Talentos</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/pages/categorias.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR CONTAINER - Se carga automáticamente -->
+    <div id="navbar-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/load-navbar.js"></script>
+
+    <!-- HEADER -->
+    <header class="hero-categorias">
+      <h1>📚 Explora Nuestras Categorías</h1>
+      <p class="subtitle">
+        Descubre el talento de nuestros estudiantes en diferentes áreas
+      </p>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container-lg py-5">
+      <!-- Sección de introducción -->
+      <section class="intro-section mb-5 text-center">
+        <h2 class="h3 fw-bold mb-3">Nuestras Áreas de Talento</h2>
+        <p class="lead text-muted">
+          En nuestro Portal de Talentos, celebramos la diversidad de habilidades
+          de nuestros estudiantes. Contamos con dos categorías principales donde
+          puedes conocer a artistas, músicos, diseñadores, programadores y
+          muchos más.
+        </p>
+      </section>
+
+      <!-- Grid de categorías -->
+      <section class="categorias-grid">
+        <div class="row g-4">
+          <!-- Categoría Música -->
+          <div class="col-md-6">
+            <div class="categoria-card">
+              <div class="categoria-icon">
+                <i class="fas fa-music"></i>
+              </div>
+              <h3 class="categoria-title">🎵 Música</h3>
+              <p class="categoria-description">
+                Explora el mundo de la música con nuestros talentosos
+                estudiantes. Desde cantantes de ópera, guitarristas, hasta
+                productores musicales. Descubre diferentes estilos, disciplinas
+                y expresiones artísticas.
+              </p>
+              <div class="categoria-highlights mb-4">
+                <h5 class="small fw-bold text-primary">Especialidades:</h5>
+                <ul class="small list-unstyled">
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i>Canto
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i
+                    >Instrumentos
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i
+                    >Composición
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i
+                    >Producción Musical
+                  </li>
+                </ul>
+              </div>
+              <a href="musica.html" class="btn btn-primary w-100">
+                <i class="fas fa-arrow-right me-2"></i>Explorar Música
+              </a>
+            </div>
+          </div>
+
+          <!-- Categoría Tecnología -->
+          <div class="col-md-6">
+            <div class="categoria-card">
+              <div class="categoria-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3 class="categoria-title">💻 Tecnología</h3>
+              <p class="categoria-description">
+                Descubre el potencial tecnológico de nuestros estudiantes. Desde
+                diseñadores web, programadores en Python, hasta expertos en
+                ciberseguridad. Conoce innovadores que están creando el futuro
+                digital.
+              </p>
+              <div class="categoria-highlights mb-4">
+                <h5 class="small fw-bold text-primary">Especialidades:</h5>
+                <ul class="small list-unstyled">
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i
+                    >Programación
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i>Diseño
+                    Web
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i
+                    >Ciberseguridad
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i
+                    >Desarrollo
+                  </li>
+                </ul>
+              </div>
+              <a href="tecnologia.html" class="btn btn-primary w-100">
+                <i class="fas fa-arrow-right me-2"></i>Explorar Tecnología
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de información adicional -->
+      <section class="info-section mt-5 pt-5 border-top">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h3 class="fw-bold mb-3">¿Cómo Explorar?</h3>
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item border-0 ps-0 pb-2">
+                <strong>Selecciona una categoría</strong> que te interese
+                explorar.
+              </li>
+              <li class="list-group-item border-0 ps-0 pb-2">
+                <strong>Conoce los talentos</strong> destacados en esa área.
+              </li>
+              <li class="list-group-item border-0 ps-0 pb-2">
+                <strong>Accede a fichas detalladas</strong> de cada estudiante.
+              </li>
+              <li class="list-group-item border-0 ps-0 pb-2">
+                <strong>Contáctanos</strong> si tienes preguntas o sugerencias.
+              </li>
+            </ol>
+          </div>
+          <div class="col-md-6">
+            <div class="info-box bg-light p-4 rounded">
+              <h5 class="fw-bold mb-3">Datos Destacados</h5>
+              <div class="row text-center">
+                <div class="col-6 mb-3">
+                  <div
+                    class="stat-number text-primary fw-bold"
+                    style="font-size: 2rem"
+                  >
+                    2
+                  </div>
+                  <p class="small text-muted mb-0">Categorías</p>
+                </div>
+                <div class="col-6 mb-3">
+                  <div
+                    class="stat-number text-primary fw-bold"
+                    style="font-size: 2rem"
+                  >
+                    6
+                  </div>
+                  <p class="small text-muted mb-0">Talentos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER CONTAINER - Se carga automáticamente -->
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/load-footer.js"></script>
+    <!-- BOTÓN SCROLL TO TOP -->
+    <button id="scroll-to-top" title="Subir al inicio">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/scroll-to-top.js"></script>
+  </body>
+</html>

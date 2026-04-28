@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     inicio: '../index.html',
     quienes: 'quienes-somos.html',
     proyectos: 'proyectos.html',
-    categorias: 'musica.html',
+    categorias: 'categorias.html',
     contacto: 'contacto.html'
   } : {
     rootIndex: 'index.html',
     inicio: 'index.html',
     quienes: 'html/quienes-somos.html',
     proyectos: 'html/proyectos.html',
-    categorias: 'html/musica.html',
+    categorias: 'html/categorias.html',
     contacto: 'html/contacto.html'
   };
   

@@ -1,21 +1,7 @@
-/* Estilos específicos para musica.html */
+/* Estilos específicos para musica.html - Página categoría música */
 
-/* Agrega aquí los estilos exclusivos de la página de música. */
+/* Estos estilos son complementarios a css/musica.css */
 
-/* Margen para el botón/anchor de volver al inicio */
-nav a[href*="index.html"] {
-	display: inline-block;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	padding: 0.75rem 2rem;
-	background: #ff6b6b;
-	color: #fff;
-	border-radius: 12px;
-	font-weight: 600;
-	text-decoration: none;
-	box-shadow: 0 2px 8px rgba(255, 107, 107, 0.08);
-	transition: background 0.2s;
-}
-nav a[href*="index.html"]:hover {
-	background: #ff8787;
+/* Estilos adicionales si son necesarios en el futuro */
+
 }

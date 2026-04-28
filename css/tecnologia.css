@@ -3,51 +3,149 @@
  * PORTAL DE TALENTOS - CATEGORÍA TECNOLOGÍA
  * ===========================
  * Estilos para la página tecnologia.html
- * Tema de color: Gradientes verde (#26a65b - #2ecc71)
- * Incluye navbar, header, secciones de contenido y footer
+ * Tema de color: Gradientes azul/verde (#1abc9c - #00b894)
  */
 
-/* ===== RESET GLOBAL ===== */
-/* Elimina márgenes y padding por defecto del navegador */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ===== HERO SECTION ===== */
+.hero-tecnologia {
+  background: linear-gradient(135deg, #1abc9c 0%, #00b894 100%);
+  color: white;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 10px 30px rgba(26, 188, 156, 0.2);
 }
 
-/* ===== BODY - ESTILOS GENERALES ===== */
-/* Define la apariencia base de la página de tecnología */
-body {
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #d4f1d4 0%, #a8e6a8 100%);
-  color: #2c3e50;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ===== NAVBAR - BARRA DE NAVEGACIÓN TECNOLOGÍA ===== */
-/* Navbar con gradiente verde para la categoría de tecnología */
-.navbar-tech {
-  background: linear-gradient(135deg, #26a65b 0%, #2ecc71 100%);
-  box-shadow: 0 4px 15px rgba(38, 166, 91, 0.3);
-  position: sticky;
-  top: 0;
-  z-index: 999; /* Se mantiene encima de otros elementos */
-}
-
-/* Logo de la marca en el navbar */
-.navbar-tech .navbar-brand {
+.hero-tecnologia h1 {
   font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5rem;
   font-weight: 700;
-  font-size: 1.3rem;
-  color: white !important;
 }
 
-/* Enlaces de navegación */
-.navbar-tech .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
+.hero-tecnologia .lead {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* ===== TARJETAS DE TALENTO ===== */
+.talento-card {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.talento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(26, 188, 156, 0.15) !important;
+}
+
+.talento-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #1abc9c 0%, #00b894 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  margin: 0 auto 1rem;
+}
+
+.talento-card .card-title {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.talento-card .btn-primary {
+  background: linear-gradient(135deg, #1abc9c 0%, #00b894 100%);
+  border: none;
+}
+
+.talento-card .btn-primary:hover {
+  background: linear-gradient(135deg, #16a085 0%, #00a075 100%);
+  transform: translateY(-2px);
+}
+
+/* ===== SECCIONES GENERALES ===== */
+main h2 {
+  font-family: "Space Grotesk", sans-serif;
+  color: #2c3e50;
+  border-bottom: 3px solid #1abc9c;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+main p {
+  color: #5a6c7d;
+  line-height: 1.8;
+}
+
+/* ===== NAVEGACIÓN ===== */
+.border-top {
+  border-color: #f0f0f0 !important;
+}
+
+.btn-outline-secondary {
+  color: #5a6c7d;
+  border-color: #d0d0d0;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #5a6c7d;
+  color: #5a6c7d;
+}
+
+.btn-outline-primary {
+  color: #1abc9c;
+  border-color: #1abc9c;
+}
+
+.btn-outline-primary:hover {
+  background-color: #1abc9c;
+  border-color: #1abc9c;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-tecnologia h1 {
+    font-size: 2rem;
+  }
+
+  .hero-tecnologia .lead {
+    font-size: 1rem;
+  }
+
+  main h2 {
+    font-size: 1.5rem;
+  }
+
+  .talento-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-tecnologia {
+    padding: 2rem 1rem;
+  }
+
+  .hero-tecnologia h1 {
+    font-size: 1.75rem;
+  }
+
+  main {
+    padding: 1.5rem 0;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
   font-weight: 500;
   transition: all 0.3s ease;
   margin: 0 0.5rem;

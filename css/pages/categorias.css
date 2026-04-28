@@ -1,0 +1,228 @@
+/* ==================================================
+ * CATEGORIAS.CSS - Estilos para página de categorías
+ * ================================================== */
+
+/* Hero Section */
+.hero-categorias {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+  margin-bottom: 3rem;
+}
+
+.hero-categorias h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-categorias .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* Intro Section */
+.intro-section {
+  margin: 2rem 0;
+}
+
+.intro-section h2 {
+  font-family: "Space Grotesk", sans-serif;
+  color: #2c3e50;
+}
+
+.intro-section .lead {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+/* Grid de Categorías */
+.categorias-grid {
+  margin: 3rem 0;
+}
+
+/* Tarjeta de Categoría */
+.categoria-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 2rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.categoria-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.2);
+  transform: translateY(-8px);
+}
+
+/* Icono de la categoría */
+.categoria-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: white;
+}
+
+/* Título de la categoría */
+.categoria-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Descripción de la categoría */
+.categoria-description {
+  color: #5a6c7d;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Highlights de especialidades */
+.categoria-highlights {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.categoria-highlights h5 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.categoria-highlights ul li {
+  color: #5a6c7d;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.categoria-highlights .text-success {
+  color: #28a745 !important;
+}
+
+/* Botón de categoría */
+.categoria-card .btn {
+  margin-top: auto;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.categoria-card .btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+}
+
+.categoria-card .btn-primary:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Info Section */
+.info-section {
+  background: linear-gradient(to bottom, transparent, rgba(102, 126, 234, 0.05));
+  padding: 3rem 0;
+}
+
+.info-section h3 {
+  font-family: "Space Grotesk", sans-serif;
+  color: #2c3e50;
+}
+
+.info-section .list-group-item {
+  background: transparent;
+  color: #5a6c7d;
+  line-height: 1.8;
+}
+
+.info-section strong {
+  color: #2c3e50;
+}
+
+.info-box {
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+}
+
+.info-box h5 {
+  font-family: "Space Grotesk", sans-serif;
+  color: #2c3e50;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-categorias {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-categorias h1 {
+    font-size: 2rem;
+  }
+
+  .hero-categorias .subtitle {
+    font-size: 1rem;
+  }
+
+  .categoria-card {
+    padding: 1.5rem;
+  }
+
+  .categoria-title {
+    font-size: 1.4rem;
+  }
+
+  .categoria-description {
+    font-size: 0.9rem;
+  }
+
+  .info-section {
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-categorias h1 {
+    font-size: 1.75rem;
+  }
+
+  .intro-section .lead {
+    font-size: 0.95rem;
+  }
+
+  .categoria-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75rem;
+  }
+
+  .categoria-title {
+    font-size: 1.25rem;
+  }
+}
