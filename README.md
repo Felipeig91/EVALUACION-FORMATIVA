@@ -87,6 +87,7 @@ Cada estudiante talentoso tiene una ficha con:
 ✅ **Navbar unificado en todas las páginas** - Menú común con accesos principales  
 ✅ **Scroll suave en inicio** - Navegación interna fluida por secciones  
 ✅ **Página de contacto funcional** - Formulario de contacto con 10 opciones de motivo  
+✅ **Validación avanzada de formulario** - Validaciones HTML5 + JavaScript en tiempo real  
 ✅ **Integración con FormSubmit** - Envío a correo admin y copia al usuario  
 ✅ **Popup de confirmación post envío** - Mensaje modal y recarga automática de la página  
 ✅ **CSS ordenado por archivos** - Estilos separados en carpeta `css`  
@@ -177,7 +178,58 @@ Cada estudiante talentoso tiene una ficha con:
 - El carousel del inicio carga imágenes aleatorias relacionadas con talento
 - Se mantiene la estructura HTML correcta y semántica como base del proyecto
 
-## 🔄 Cambios Recientes (23 de abril de 2026)
+## 🔄 Cambios Recientes
+
+### 1 de mayo de 2026 - Implementación de Validación Avanzada de Formulario
+
+#### Validaciones HTML5 Mejoradas (`html/contacto.html`)
+
+- **Nombre**: minlength=3, maxlength=100 caracteres
+- **Email**: validación de formato con expresión regular
+- **Teléfono**: pattern con mínimo 7 dígitos usando patrón `[0-9\+\-\s\(\)]{7,}`
+- **Asunto**: minlength=5, maxlength=100 caracteres
+- **Mensaje**: minlength=20, maxlength=1000 caracteres con contador visual
+- **Campos seleccionables**: validación obligatoria para Rol y Motivo
+- **Consentimiento**: checkbox obligatorio para aceptar tratamiento de datos
+- Mensajes de error personalizados para cada campo con feedback visual
+
+#### Validación JavaScript Robusta (`js/contacto.js`)
+
+- **Validación en tiempo real**: feedback inmediato mientras el usuario escribe o navega entre campos
+- **Funciones de validación específicas**:
+  - `validateNombre()`: Verifica longitud y rechaza números
+  - `validateEmail()`: Valida formato de correo con regex
+  - `validateTelefono()`: Asegura mínimo 7 dígitos
+  - `validateAsunto()`: Rango de caracteres 5-100
+  - `validateMensaje()`: Rango de caracteres 20-1000
+  - `validateRol()`: Verifica selección de rol
+  - `validateMotivo()`: Verifica selección de motivo
+  - `validateConsentimiento()`: Verifica checkbox aceptado
+- **Event listeners**: Validación en eventos blur, input y change
+- **Contador de caracteres**: Muestra contador dinámico para el campo mensaje (0/1000)
+- **Scroll automático**: Lleva al primer campo con error cuando falla validación
+- **Envío seguro**: Previene envío si algún campo no es válido
+
+#### Estilos CSS Mejorados (`css/contacto.css`)
+
+- **Iconos visuales**: Iconos SVG para campos válidos (✓) e inválidos (✗)
+- **Colores intuitivos**:
+  - Verde (#28a745) para campos válidos
+  - Rojo (#dc3545) para campos inválidos
+- **Mensajes de feedback**: Estilos diferenciados para `.valid-feedback` e `.invalid-feedback`
+- **Transiciones suaves**: Animaciones CSS para cambios de estado
+- **Efectos de enfoque**: Sombras y bordes personalizados al hacer focus
+- **Responsividad**: Adaptación de estilos para dispositivos móviles
+
+#### Características de UX/UI
+
+- ✅ Validación no invasiva: Muestra errores solo cuando es apropiado
+- ✅ Feedback positivo: Confirma campos válidos con checkmarks verdes
+- ✅ Mensajes claros: Cada error explica exactamente qué está mal
+- ✅ Accesibilidad: Usa `setCustomValidity()` para compatibilidad con navegadores
+- ✅ Contador visual: Ayuda al usuario a monitorear caracteres en el mensaje
+
+### 23 de abril de 2026
 
 - Se creó la página `html/contacto.html` con diseño Bootstrap y formulario completo.
 - Se implementó integración con FormSubmit en el formulario de contacto.
@@ -244,5 +296,5 @@ Cada estudiante talentoso tiene una ficha con:
 
 ---
 
-**Última actualización**: 23 de abril de 2026  
-**Versión**: 2.1
+**Última actualización**: 1 de mayo de 2026  
+**Versión**: 3.0

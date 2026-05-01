@@ -70,8 +70,15 @@
                   class="form-control"
                   id="nombre"
                   name="nombre"
+                  minlength="3"
+                  maxlength="100"
+                  placeholder="Ej: Juan García"
                   required
                 />
+                <div class="invalid-feedback">
+                  El nombre debe tener entre 3 y 100 caracteres.
+                </div>
+                <div class="valid-feedback">✓ Nombre válido</div>
               </div>
 
               <div class="col-md-6">
@@ -84,6 +91,10 @@
                   placeholder="ejemplo@correo.com"
                   required
                 />
+                <div class="invalid-feedback">
+                  Por favor ingresa un correo electrónico válido.
+                </div>
+                <div class="valid-feedback">✓ Correo válido</div>
               </div>
 
               <div class="col-md-6">
@@ -93,9 +104,14 @@
                   class="form-control"
                   id="telefono"
                   name="telefono"
+                  pattern="[0-9\+\-\s\(\)]{7,}"
                   placeholder="+54 11 1234 5678"
                   required
                 />
+                <div class="invalid-feedback">
+                  Por favor ingresa un teléfono válido (mínimo 7 dígitos).
+                </div>
+                <div class="valid-feedback">✓ Teléfono válido</div>
               </div>
 
               <div class="col-md-6">
@@ -109,6 +125,10 @@
                   <option value="Familiar">Familiar</option>
                   <option value="Visitante">Visitante</option>
                 </select>
+                <div class="invalid-feedback">
+                  Por favor selecciona un tipo de usuario.
+                </div>
+                <div class="valid-feedback">✓ Tipo de usuario seleccionado</div>
               </div>
 
               <div class="col-12">
@@ -146,6 +166,10 @@
                   <option value="9. Soporte técnico">9. Soporte técnico</option>
                   <option value="10. Otro">10. Otro</option>
                 </select>
+                <div class="invalid-feedback">
+                  Por favor selecciona un motivo para tu mensaje.
+                </div>
+                <div class="valid-feedback">✓ Motivo seleccionado</div>
               </div>
 
               <div class="col-12">
@@ -155,8 +179,15 @@
                   class="form-control"
                   id="asunto"
                   name="asunto"
+                  minlength="5"
+                  maxlength="100"
+                  placeholder="Ej: Consulta sobre cursos de música"
                   required
                 />
+                <div class="invalid-feedback">
+                  El asunto debe tener entre 5 y 100 caracteres.
+                </div>
+                <div class="valid-feedback">✓ Asunto válido</div>
               </div>
 
               <div class="col-12">
@@ -167,8 +198,17 @@
                   name="mensaje"
                   rows="5"
                   minlength="20"
+                  maxlength="1000"
+                  placeholder="Escribe tu mensaje aquí..."
                   required
                 ></textarea>
+                <small class="form-text text-muted">
+                  <span id="charCount">0</span>/1000 caracteres
+                </small>
+                <div class="invalid-feedback d-block">
+                  El mensaje debe tener entre 20 y 1000 caracteres.
+                </div>
+                <div class="valid-feedback">✓ Mensaje válido</div>
               </div>
 
               <div class="col-12 form-check mt-2 ms-2">
@@ -182,6 +222,10 @@
                 <label class="form-check-label" for="consentimiento">
                   Acepto el tratamiento de datos para recibir respuesta.
                 </label>
+                <div class="invalid-feedback d-block mt-2">
+                  Debes aceptar el tratamiento de datos para continuar.
+                </div>
+                <div class="valid-feedback">✓ Aceptado</div>
               </div>
             </div>
 
@@ -216,10 +260,7 @@
           <div class="modal-header">
             <h5 class="modal-title" id="successModalLabel">Mensaje enviado</h5>
           </div>
-          <div class="modal-body">
-            Tu mensaje fue enviado correctamente. La página se actualizará en 5
-            segundos.
-          </div>
+          <div class="modal-body">Tu mensaje fue enviado correctamente.</div>
           <div class="modal-footer">
             <button
               type="button"
