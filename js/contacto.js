@@ -203,6 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
       event.stopPropagation();
       form.classList.add("was-validated");
 
+      // Mostrar alerta de validación
+      alert("⚠️ Los datos ingresados son inválidos. Por favor, revisa los errores marcados y completa todos los campos requeridos.");
+
       // Scroll al primer error
       const firstInvalidElement = form.querySelector(".is-invalid");
       if (firstInvalidElement) {
