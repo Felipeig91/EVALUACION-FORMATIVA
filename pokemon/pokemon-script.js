@@ -1,5 +1,10 @@
 $(document).ready(function () {
   const apiUrl = "https://pokeapi.co/api/v2/pokemon";
+  // Proxy alternativo en caso de que el principal falle
+  const proxyUrl = "https://raw.githubusercontent.com/PokeAPI/PokemonData/master/pokemon.json";
+
+  console.log("Script de Pokédex iniciado");
+  console.log("jQuery versión:", jQuery.fn.jquery);
 
   // Buscar al hacer clic en el botón
   $("#searchBtn").on("click", function () {
@@ -27,25 +32,31 @@ $(document).ready(function () {
     $("#pokemonCard").hide();
 
     var url = apiUrl + "/" + pokemonName;
-    console.log("Buscando en URL:", url);
+    console.log("🔍 Buscando:", pokemonName);
+    console.log("📍 URL:", url);
 
     fetch(url)
       .then(function(response) {
-        console.log("Respuesta recibida:", response.status);
+        console.log("✓ Respuesta recibida, Status:", response.status);
         if (!response.ok) {
-          throw new Error("Pokémon no encontrado (Status: " + response.status + ")");
+          if (response.status === 404) {
+            throw new Error("Pokémon no encontrado");
+          } else {
+            throw new Error("Error del servidor: " + response.status);
+          }
         }
         return response.json();
       })
       .then(function(data) {
-        console.log("Datos recibidos:", data);
+        console.log("✓ Datos JSON procesados correctamente");
+        console.log("📦 Data:", data);
         displayPokemon(data);
         $("#loading").hide();
       })
       .catch(function(error) {
-        console.error("Error en la búsqueda:", error);
-        showError("Pokémon no encontrado. Intenta con otro nombre o ID válido. Error: " + error.message);
+        console.error("✗ Error en la búsqueda:", error.message);
         $("#loading").hide();
+        showError("❌ " + error.message + ". Verifica que el nombre o ID sea correcto.");
       });
   }
 
