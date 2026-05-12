@@ -1,25 +1,43 @@
 // Cargar navbar automáticamente con jQuery
 $(document).ready(function() {
-  // Detectar si estamos en una página dentro de html/ o en el root
+  // Detectar si estamos en una página dentro de html/, pokemon/ o en el root
   const isInHtmlFolder = window.location.pathname.includes('/html/');
-  const navbarPath = isInHtmlFolder ? 'navbar.html' : 'html/navbar.html';
+  const isInPokemonFolder = window.location.pathname.includes('/pokemon/');
   
-  // Definir los links según la ubicación
-  const links = isInHtmlFolder ? {
-    rootIndex: '../index.html',
-    inicio: '../index.html',
-    quienes: 'quienes-somos.html',
-    proyectos: 'proyectos.html',
-    categorias: 'categorias.html',
-    contacto: 'contacto.html'
-  } : {
-    rootIndex: 'index.html',
-    inicio: 'index.html',
-    quienes: 'html/quienes-somos.html',
-    proyectos: 'html/proyectos.html',
-    categorias: 'html/categorias.html',
-    contacto: 'html/contacto.html'
-  };
+  let navbarPath;
+  let links;
+  
+  if (isInHtmlFolder) {
+    navbarPath = 'navbar.html';
+    links = {
+      rootIndex: '../index.html',
+      inicio: '../index.html',
+      quienes: 'quienes-somos.html',
+      proyectos: 'proyectos.html',
+      categorias: 'categorias.html',
+      contacto: 'contacto.html'
+    };
+  } else if (isInPokemonFolder) {
+    navbarPath = '../html/navbar.html';
+    links = {
+      rootIndex: '../index.html',
+      inicio: '../index.html',
+      quienes: '../html/quienes-somos.html',
+      proyectos: '../html/proyectos.html',
+      categorias: '../html/categorias.html',
+      contacto: '../html/contacto.html'
+    };
+  } else {
+    navbarPath = 'html/navbar.html';
+    links = {
+      rootIndex: 'index.html',
+      inicio: 'index.html',
+      quienes: 'html/quienes-somos.html',
+      proyectos: 'html/proyectos.html',
+      categorias: 'html/categorias.html',
+      contacto: 'html/contacto.html'
+    };
+  }
   
   // Buscar contenedor del navbar
   const $navbarContainer = $('#navbar-container');
