@@ -172,8 +172,8 @@ $(document).ready(function() {
       event.stopPropagation();
       $form.addClass("was-validated");
 
-      // Mostrar alerta
-      alert("⚠️ Los datos ingresados son inválidos. Por favor, revisa los errores marcados y completa todos los campos requeridos.");
+      // Mostrar alerta mejorada
+      alert("⚠️ Formulario incompleto\n\nPor favor, revisa los errores marcados en rojo y completa todos los campos requeridos correctamente.\n\nVerifica:\n• Nombre (mínimo 3 caracteres, sin números)\n• Email válido\n• Teléfono (mínimo 7 dígitos)\n• Tipo de usuario seleccionado\n• Motivo seleccionado\n• Asunto (entre 5 y 100 caracteres)\n• Mensaje (entre 20 y 1000 caracteres)\n• Consentimiento aceptado");
 
       // Scroll al primer error con jQuery
       const $firstInvalid = $form.find(".is-invalid").first();
