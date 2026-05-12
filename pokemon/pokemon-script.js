@@ -4,7 +4,9 @@
 
 console.log("✅ Cargando script Pokédex...");
 
+// API original y proxy CORS
 const API_URL = "https://pokeapi.co/api/v2/pokemon";
+const CORS_PROXY = "https://api.allorigins.win/raw?url=";
 
 // Esperar a que el DOM esté listo
 function initPokeDex() {
@@ -48,9 +50,11 @@ function initPokeDex() {
     pokemonCard.style.display = "none";
     
     const url = API_URL + "/" + name;
-    console.log("📍 URL:", url);
+    const corsUrl = CORS_PROXY + encodeURIComponent(url);
+    console.log("📍 URL Original:", url);
+    console.log("📍 URL con CORS:", corsUrl);
     
-    fetch(url)
+    fetch(corsUrl)
       .then(function(response) {
         console.log("📡 Respuesta:", response.status);
         if (!response.ok) {
@@ -67,7 +71,7 @@ function initPokeDex() {
       .catch(function(error) {
         console.error("❌ Error:", error);
         loadingDiv.style.display = "none";
-        showError("Error: " + error.message);
+        showError("❌ " + error.message);
       });
   }
   
@@ -139,7 +143,7 @@ function initPokeDex() {
   }
   
   function showError(message) {
-    console.error("⚠️ Error:", message);
+    console.error("⚠️", message);
     errorDiv.textContent = message;
     errorDiv.style.display = "block";
     pokemonCard.style.display = "none";
