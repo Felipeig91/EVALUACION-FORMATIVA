@@ -4,9 +4,9 @@
 
 console.log("✅ Cargando script Pokédex...");
 
-// API original y proxy CORS
+// API original y múltiples opciones de proxy
 const API_URL = "https://pokeapi.co/api/v2/pokemon";
-const CORS_PROXY = "https://api.allorigins.win/raw?url=";
+const CORS_PROXY = "https://cors.bridged.cc/";
 
 // Esperar a que el DOM esté listo
 function initPokeDex() {
@@ -50,13 +50,18 @@ function initPokeDex() {
     pokemonCard.style.display = "none";
     
     const url = API_URL + "/" + name;
-    const corsUrl = CORS_PROXY + encodeURIComponent(url);
+    const corsUrl = CORS_PROXY + url;
     console.log("📍 URL Original:", url);
     console.log("📍 URL con CORS:", corsUrl);
     
-    fetch(corsUrl)
+    fetch(corsUrl, {
+      method: "GET",
+      headers: {
+        "Accept": "application/json"
+      }
+    })
       .then(function(response) {
-        console.log("📡 Respuesta:", response.status);
+        console.log("📡 Respuesta Status:", response.status);
         if (!response.ok) {
           throw new Error("Pokémon no encontrado (Status: " + response.status + ")");
         }
@@ -69,9 +74,41 @@ function initPokeDex() {
         displayPokemon(data);
       })
       .catch(function(error) {
-        console.error("❌ Error:", error);
+        console.error("❌ Error en Fetch:", error);
         loadingDiv.style.display = "none";
-        showError("❌ " + error.message);
+        
+        // Intentar con proxy alternativo
+        console.log("🔄 Intentando con proxy alternativo...");
+        tryAlternativeProxy(name, loadingDiv, errorDiv, pokemonCard);
+      });
+  }
+  
+  function tryAlternativeProxy(name, loadingDiv, errorDiv, pokemonCard) {
+    // Proxy alternativo
+    const altProxy = "https://api.codetabs.com/v1/proxy?quest=";
+    const url = API_URL + "/" + name;
+    const altUrl = altProxy + encodeURIComponent(url);
+    
+    console.log("📍 URL alternativa:", altUrl);
+    
+    fetch(altUrl)
+      .then(function(response) {
+        console.log("📡 Respuesta alternativa Status:", response.status);
+        if (!response.ok) {
+          throw new Error("Pokémon no encontrado");
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        console.log("✅ Datos recibidos del proxy alternativo:");
+        console.log(data);
+        loadingDiv.style.display = "none";
+        displayPokemon(data);
+      })
+      .catch(function(error) {
+        console.error("❌ Error con proxy alternativo:", error);
+        loadingDiv.style.display = "none";
+        showError("❌ No se pudo conectar a la API. Intenta nuevamente.");
       });
   }
   
