@@ -1,20 +1,21 @@
-// Obtener el botón
-let miBotón = document.getElementById("btn-ir-arriba");
-
-// Cuando el usuario hace scroll hacia abajo, mostrar el botón
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        miBotón.style.display = "block";
+// Scroll-to-top mejorado con jQuery
+$(document).ready(function() {
+  const $botón = $("#btn-ir-arriba");
+  
+  // Mostrar/ocultar botón al hacer scroll
+  $(window).on('scroll', function() {
+    if ($(window).scrollTop() > 20) {
+      $botón.fadeIn(200);
     } else {
-        miBotón.style.display = "none";
+      $botón.fadeOut(200);
     }
-}
-
-// Cuando el usuario hace clic, volver al top suavemente
-function volverArriba() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-}
+  });
+  
+  // Volver al top suavemente al hacer clic
+  $botón.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 800);
+  });
+});
 
 
