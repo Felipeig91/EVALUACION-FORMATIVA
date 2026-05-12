@@ -1,143 +1,156 @@
-$(document).ready(function () {
-  const apiUrl = "https://pokeapi.co/api/v2/pokemon";
-  // Proxy alternativo en caso de que el principal falle
-  const proxyUrl = "https://raw.githubusercontent.com/PokeAPI/PokemonData/master/pokemon.json";
+// ========================================
+// POKÉDEX - Script Vanilla JavaScript
+// ========================================
 
-  console.log("Script de Pokédex iniciado");
-  console.log("jQuery versión:", jQuery.fn.jquery);
+console.log("✅ Cargando script Pokédex...");
 
-  // Buscar al hacer clic en el botón
-  $("#searchBtn").on("click", function () {
-    const pokemonName = $("#pokemonInput").val().trim().toLowerCase();
+const API_URL = "https://pokeapi.co/api/v2/pokemon";
 
-    if (pokemonName === "") {
-      showError("Por favor ingresa un nombre o ID de Pokémon");
+// Esperar a que el DOM esté listo
+function initPokeDex() {
+  console.log("🚀 Inicializando Pokédex");
+  
+  // Obtener elementos
+  const searchBtn = document.getElementById("searchBtn");
+  const pokemonInput = document.getElementById("pokemonInput");
+  const loadingDiv = document.getElementById("loading");
+  const errorDiv = document.getElementById("error");
+  const pokemonCard = document.getElementById("pokemonCard");
+  
+  if (!searchBtn) {
+    console.error("❌ No se encontró el botón de búsqueda");
+    return;
+  }
+  
+  console.log("✓ Elementos del DOM encontrados");
+  
+  // Event listeners
+  searchBtn.addEventListener("click", function() {
+    const name = pokemonInput.value.trim().toLowerCase();
+    if (!name) {
+      showError("Por favor ingresa un nombre o ID");
       return;
     }
-
-    searchPokemon(pokemonName);
+    searchPokemon(name);
   });
-
-  // Buscar al presionar Enter en el input
-  $("#pokemonInput").on("keypress", function (e) {
-    if (e.which === 13) {
-      $("#searchBtn").click();
+  
+  pokemonInput.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      searchBtn.click();
     }
   });
-
-  function searchPokemon(pokemonName) {
-    // Mostrar loading
-    $("#loading").show();
-    $("#error").hide();
-    $("#pokemonCard").hide();
-
-    var url = apiUrl + "/" + pokemonName;
-    console.log("🔍 Buscando:", pokemonName);
+  
+  function searchPokemon(name) {
+    console.log("🔍 Buscando:", name);
+    
+    loadingDiv.style.display = "block";
+    errorDiv.style.display = "none";
+    pokemonCard.style.display = "none";
+    
+    const url = API_URL + "/" + name;
     console.log("📍 URL:", url);
-
+    
     fetch(url)
       .then(function(response) {
-        console.log("✓ Respuesta recibida, Status:", response.status);
+        console.log("📡 Respuesta:", response.status);
         if (!response.ok) {
-          if (response.status === 404) {
-            throw new Error("Pokémon no encontrado");
-          } else {
-            throw new Error("Error del servidor: " + response.status);
-          }
+          throw new Error("Pokémon no encontrado (Status: " + response.status + ")");
         }
         return response.json();
       })
       .then(function(data) {
-        console.log("✓ Datos JSON procesados correctamente");
-        console.log("📦 Data:", data);
+        console.log("✅ Datos recibidos:");
+        console.log(data);
+        loadingDiv.style.display = "none";
         displayPokemon(data);
-        $("#loading").hide();
       })
       .catch(function(error) {
-        console.error("✗ Error en la búsqueda:", error.message);
-        $("#loading").hide();
-        showError("❌ " + error.message + ". Verifica que el nombre o ID sea correcto.");
+        console.error("❌ Error:", error);
+        loadingDiv.style.display = "none";
+        showError("Error: " + error.message);
       });
   }
-
+  
   function displayPokemon(pokemon) {
+    console.log("🎨 Mostrando:", pokemon.name);
+    
     try {
-      // Información básica
-      $("#pokemonId").text(pokemon.id);
-      $("#pokemonName").text(
-        pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
-      );
+      document.getElementById("pokemonId").textContent = pokemon.id;
+      document.getElementById("pokemonName").textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
       
-      // Obtener la mejor imagen disponible
-      let imageUrl = "";
+      // Imagen
+      let imgUrl = "";
       if (pokemon.sprites && pokemon.sprites.other && pokemon.sprites.other["official-artwork"] && pokemon.sprites.other["official-artwork"].front_default) {
-        imageUrl = pokemon.sprites.other["official-artwork"].front_default;
+        imgUrl = pokemon.sprites.other["official-artwork"].front_default;
       } else if (pokemon.sprites && pokemon.sprites.front_default) {
-        imageUrl = pokemon.sprites.front_default;
+        imgUrl = pokemon.sprites.front_default;
       } else {
-        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png";
+        imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png";
       }
-      $("#pokemonImage").attr("src", imageUrl);
-
+      document.getElementById("pokemonImage").src = imgUrl;
+      
       // Altura y peso
-      const height = pokemon.height ? (pokemon.height / 10).toFixed(1) : "N/A";
-      const weight = pokemon.weight ? (pokemon.weight / 10).toFixed(1) : "N/A";
-      $("#pokemonHeight").text(height);
-      $("#pokemonWeight").text(weight);
-
+      document.getElementById("pokemonHeight").textContent = pokemon.height ? (pokemon.height / 10).toFixed(1) : "N/A";
+      document.getElementById("pokemonWeight").textContent = pokemon.weight ? (pokemon.weight / 10).toFixed(1) : "N/A";
+      
       // Tipos
+      let typesHtml = "";
       if (pokemon.types && pokemon.types.length > 0) {
-        const typesHtml = pokemon.types
-          .map(
-            (type) =>
-              "<span class=\"type-badge type-" + type.type.name + "\">" + type.type.name + "</span>"
-          )
-          .join("");
-        $("#pokemonTypes").html(typesHtml);
+        typesHtml = pokemon.types.map(t => '<span class="type-badge type-' + t.type.name + '">' + t.type.name + '</span>').join("");
       } else {
-        $("#pokemonTypes").html("<span>No disponible</span>");
+        typesHtml = "<span>No disponible</span>";
       }
-
+      document.getElementById("pokemonTypes").innerHTML = typesHtml;
+      
       // Habilidades
+      let abilitiesHtml = "";
       if (pokemon.abilities && pokemon.abilities.length > 0) {
-        const abilitiesHtml = pokemon.abilities
-          .map((ability) => "<li>" + ability.ability.name + "</li>")
-          .join("");
-        $("#pokemonAbilities").html(abilitiesHtml);
+        abilitiesHtml = pokemon.abilities.map(a => "<li>" + a.ability.name + "</li>").join("");
       } else {
-        $("#pokemonAbilities").html("<li>No disponible</li>");
+        abilitiesHtml = "<li>No disponible</li>";
       }
-
+      document.getElementById("pokemonAbilities").innerHTML = abilitiesHtml;
+      
       // Estadísticas
+      let statsHtml = "";
       if (pokemon.stats && pokemon.stats.length > 0) {
-        let statsHtml = "";
-        for (let i = 0; i < pokemon.stats.length; i++) {
-          const stat = pokemon.stats[i];
+        pokemon.stats.forEach(function(stat) {
           const maxValue = 150;
           const percentage = (stat.base_stat / maxValue) * 100;
-          statsHtml += "<div class=\"stat-row\">";
-          statsHtml += "<div class=\"stat-name\">" + stat.stat.name + "</div>";
-          statsHtml += "<div class=\"stat-bar\">";
-          statsHtml += "<div class=\"stat-value\" style=\"width: " + percentage + "%\"></div>";
-          statsHtml += "</div>";
-          statsHtml += "<div class=\"stat-number\">" + stat.base_stat + "</div>";
-          statsHtml += "</div>";
-        }
-        $("#pokemonStats").html(statsHtml);
+          statsHtml += '<div class="stat-row">';
+          statsHtml += '<div class="stat-name">' + stat.stat.name + '</div>';
+          statsHtml += '<div class="stat-bar"><div class="stat-value" style="width: ' + percentage + '%"></div></div>';
+          statsHtml += '<div class="stat-number">' + stat.base_stat + '</div>';
+          statsHtml += '</div>';
+        });
       } else {
-        $("#pokemonStats").html("<p>No disponible</p>");
+        statsHtml = "<p>No disponible</p>";
       }
-
-      // Mostrar tarjeta con animación
-      $("#pokemonCard").fadeIn(300);
+      document.getElementById("pokemonStats").innerHTML = statsHtml;
+      
+      // Mostrar tarjeta
+      pokemonCard.style.display = "block";
+      console.log("✨ ¡Pokémon mostrado exitosamente!");
+      
     } catch (e) {
-      console.error("Error al procesar los datos:", e);
-      showError("Error al procesar los datos del Pokémon");
+      console.error("⚠️ Error al mostrar:", e);
+      showError("Error al mostrar los datos");
     }
   }
-
+  
   function showError(message) {
-    $("#error").text(message).slideDown(300);
-    $("#pokemonCard").hide();
+    console.error("⚠️ Error:", message);
+    errorDiv.textContent = message;
+    errorDiv.style.display = "block";
+    pokemonCard.style.display = "none";
   }
-});
+}
+
+// Ejecutar cuando el DOM esté listo
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initPokeDex);
+} else {
+  initPokeDex();
+}
+
+console.log("✅ Script Pokédex cargado completamente");
