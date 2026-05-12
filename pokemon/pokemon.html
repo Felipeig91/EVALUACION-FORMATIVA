@@ -21,7 +21,13 @@
 
       <div id="error" class="error"></div>
 
-      <div id="loading" class="loading" style="display: none">Cargando...</div>
+      <div id="loading" class="loading" style="display: none">
+        <p>Cargando...</p>
+        <p style="font-size: 0.9em; margin-top: 10px">
+          Si este mensaje persiste, abre la consola del navegador (F12) para ver
+          más detalles
+        </p>
+      </div>
 
       <div id="pokemonCard" class="pokemon-card" style="display: none">
         <div class="card-content">
@@ -50,5 +56,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="pokemon-script.js"></script>
+    <script>
+      console.log("Página de Pokédex cargada correctamente");
+    </script>
   </body>
 </html>

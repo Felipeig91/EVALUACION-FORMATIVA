@@ -26,22 +26,27 @@ $(document).ready(function () {
     $("#error").hide();
     $("#pokemonCard").hide();
 
-    $.ajax({
-      url: apiUrl + "/" + pokemonName,
-      method: "GET",
-      dataType: "json",
-      timeout: 5000,
-      success: function (data) {
+    var url = apiUrl + "/" + pokemonName;
+    console.log("Buscando en URL:", url);
+
+    fetch(url)
+      .then(function(response) {
+        console.log("Respuesta recibida:", response.status);
+        if (!response.ok) {
+          throw new Error("Pokémon no encontrado (Status: " + response.status + ")");
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        console.log("Datos recibidos:", data);
         displayPokemon(data);
         $("#loading").hide();
-      },
-      error: function (xhr, status, error) {
+      })
+      .catch(function(error) {
         console.error("Error en la búsqueda:", error);
-        console.error("Status:", status);
-        showError("Pokémon no encontrado. Intenta con otro nombre o ID válido.");
+        showError("Pokémon no encontrado. Intenta con otro nombre o ID válido. Error: " + error.message);
         $("#loading").hide();
-      },
-    });
+      });
   }
 
   function displayPokemon(pokemon) {
